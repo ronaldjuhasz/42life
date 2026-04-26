@@ -116,7 +116,7 @@ void init_map(t* s, char* av[])
 	s->map = make_map(s);
 }
 
-int neigbor(t* s, int i, int j)
+int neighbour(t* s, int i, int j)
 {
 	int count = 0;
 	
