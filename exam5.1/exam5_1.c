@@ -141,7 +141,7 @@ void life(t* s)
 		{
 			for (int j = 0; j < s->w; j++)
 			{
-				int n = neigbor(s, i, j);
+				int n = neighbour(s, i, j);
 				if (s->map[i][j] == ALIVE)
 				{
 					if (n < 2)							//underpopulation
@@ -161,7 +161,6 @@ void life(t* s)
 }
 int main (int ac, char** av)
 {
-	int rb;
 	char buff;
 	t s;
 
@@ -169,12 +168,8 @@ int main (int ac, char** av)
 		return (1);
 	init_map(&s, av);
 	
-	do
-	{
-		rb = read(0, &buff, 1);
+	while (read(0, &buff, 1))
 		get_pos(buff, &s);
-	}
-	while (rb);
 
 	if (s.i)
 		life(&s);
