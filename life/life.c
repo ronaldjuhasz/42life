@@ -26,7 +26,8 @@ int main (int ac, char** av)
 			print_error(&s, RE);
 			return (EXIT_FAILURE);
 		}
-		get_pos(&s, buff);
+		else if (rb > 0)
+			get_pos(&s, buff);
 	}
 	while (rb);
 
